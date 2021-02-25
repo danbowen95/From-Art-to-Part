@@ -1,0 +1,90 @@
+\documentclass[border=5pt]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.text}
+
+ \pgfplotsset{compat=1.17}
+
+\renewcommand\familydefault{\sfdefault}
+
+
+\begin{document}
+\begin{tikzpicture}
+
+\node (ymax) at (0,8) {};
+\node (xmax) at (10,0) {};
+
+\draw[help lines, color=gray!30, dashed] (0,0) grid (10,10);
+
+\node (o) at (0,0) {};
+\node[scale=1.5] (xmid) at ($(o)!0.5!(xmax)$) {Variety of Models};
+\node[text width=1cm,align=center,scale=1.5] (ymid) at ($(o)!0.2!(ymax)$) {Volume \\ per \\ Model};
+
+\draw[->,ultra thick] (o.center) -- (xmid) -- (xmax);
+\draw[->,ultra thick] (o.center) -- (ymid) -- (ymax);
+
+\node[shape=circle,draw] at (8,1) (n1) {};
+\node[shape=circle,draw] at (1.5,2.5) (n2) {};
+\node[shape=circle,draw] at (1,7) (n3) {};
+\node[shape=circle,draw] at (3,6.5) (n4) {};
+\node[shape=circle,draw] at (6,5.5) (n5) {};
+\node[] at (10,5.5) (n6) {};
+
+\node[xshift=0em, yshift=1.5em] at (n1) (n1d) {1850};
+\node[xshift=1em, yshift=1.2em] at (n2) (n2d) {1913};
+\node[xshift=1.2em, yshift=-1.5em] at (n3) (n3d) {1980};
+\node[xshift=-0.2em, yshift=-1.5em] at (n4) (n4d) {1995};
+\node[xshift=-0.5em, yshift=-1.5em] at (n5) (n5d) {2000};
+
+\draw[] (n1) -- (n1d);
+\draw[] (n2) -- (n2d);
+\draw[] (n3) -- (n3d);
+\draw[] (n4) -- (n4d);
+\draw[] (n5) -- (n5d);
+
+
+
+\draw [->,thick] (11,1.2) -- ([bend right=15] n1);
+
+\def\myshift#1{\raisebox{-2.5ex}}
+\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Craft Production}}}] (n2) to [bend right=15]  (n1);
+%
+\def\myshift#1{\raisebox{-2.5ex}}
+\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Mass Production}}}] (n3) to [bend right=15]  (n2);
+%
+\def\myshift#1{\raisebox{1ex}}
+\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Lean MFG}}}] (n3) to [bend left=10]  (n4);
+%
+\def\myshift#1{\raisebox{1ex}}
+\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Mass Customisation}}}] (n4) to [bend right=5]  (n5);
+%
+\def\myshift#1{\raisebox{1ex}}
+\draw [->,dashed,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Personalised Production}}}] (n5) to [bend right=5]  (n6);
+
+
+\node[circle, draw,inner sep=2pt, scale=0.15] at (9.8,4) (IR1) {\includegraphics[width=6cm]{hammer.png}};
+\node[anchor=south] at (IR1.north) () {IR.1 - 1750};
+\draw[] (IR1) -- (10.75,1.2);
+
+\node[circle, draw,inner sep=1pt, scale=0.075] at (9.2,2.3) (IR2) {\includegraphics[width=6cm]{bolt.png}};
+\node[anchor=south] at (IR2.north) () {IR.2 - 1800};
+\draw[] (IR2) -- (9.5,1.10);
+
+\node[circle, draw,inner sep=1pt, scale=0.15] at (2.5,4) (IR3) {\includegraphics[width=6cm]{microcontroller.png}};
+\node[anchor=south] at (IR3.north) () {IR.3 - 1950};
+\draw[] (IR3) -- (1.1,3.8);
+
+\node[circle, draw,inner sep=1pt, scale=0.15] at (6.5,6.5) (IR4) {\includegraphics[width=6cm]{wifi.png}};
+\node[anchor=south] at (IR4.north) () {IR.4 - 2000};
+\draw[] (IR4) -- (n5);
+
+
+\draw[line width=5pt, stealth-stealth, red!80!blue] (7,1) -- (7,5.4);
+%\draw[line width=5pt, stealth-, red!80!blue] (8,1) -- (8,0);
+
+
+
+\end{tikzpicture}
+\end{document}

@@ -233,91 +233,46 @@ The former approach used case-based reasoning to select a suitable toolpath from
 
 Numerical modelling was used by \citep{Polyblank2015ParametricSpinning} in a closed-loop strategy to correct the toolpath online to avoid failure of the workpiece by wrinkling or tearing. However, the long solution times of the finite element models made this system completely impractical. It would take over a year to design a full toolpath for a single part and a single material. 
 
+
+ \citep{Wang2011ASpinning}??
+ 
+ 
 \subsection{Mechanisation and Automation Technologies \label{sec:MechandAuto}}
-Section \ref{sec:MechanisedProcess} demonstrates the variety of different technologies and methods used to begin to automate traditional metal smith techniques in pursuit of new flexible forming processes. A summary of these processes given in Table \ref{tab:MechProcesses}, outlining the different systems, sensors and mechanical characteristics used to physically actuate and regulate the process. For comparison, manual techniques are also listed, using information collected in section \ref{sec:Manual}.
 
-%\begin{landscape}
-%\begin{table}[h] 
-%    \centering
-%    \resizebox{\linewidth}{!}{
-%        \input{tables/ProcessTable1.Tex}
-%        }
-%    \caption{Automated process summary [needs reformatting]}
-%    \label{tab:MechProcesses}
-%\end{table}
-%\end{landscape}
+A variety of processes are reviewed in section \ref{sec:MechanisedProcess}, each of which can be related back to a traditional technique used by the metal smith. On closer inspection, these new processes take inspiration from the traditional craftsman in one of three ways. Processes where physical and/or decision making elements are automated are defined as `Mechanised-Traditional' when a traditional technique and tooling are used to deform material or `Mechanised-Constrained' when traditional tooling or techniques is used, but is constrained in some manner - for example the sheet is constrained at the edges. Finally, `Variant' processes replicate similar deformation mechanics as the traditional processes, but the tooling/technique is substantially modified from its traditional form - for example ISP. 
 
-\newpage
+In keeping with the theme of this review, we look more closely on mechanised processes. The mechanical hardware used to physically manipulate and actuate the sheet and/or tooling is predominantly carried out using industrial robot arms. [say why this is, and why it is good]. 
 
-
-
-\begin{landscape}
+\renewcommand{\arraystretch}{1.2} 
 \begin{table}[h] 
     \centering
     \resizebox{\linewidth}{!}{
-        \input{tables/ProcessTable2.Tex}
-        }
-    \caption{Automated process summary - Complete}
-    \label{tab:MechProcessesOLD}
-\end{table}
-\end{landscape}
-
-\newpage
-
-
-
-\newpage
-\begin{table}[h] 
-    \centering
-    \resizebox{\linewidth}{!}{
-        \input{tables/ProcessTable4.Tex}
+        \input{tables/ProcessTable5.Tex}
         }
     \caption{Automated process summary - Condensed }
     \label{tab:MechProcesses}
 \end{table}
 
-The table lists various physical characteristics of each process. Process technique is defined as `traditional' when a traditional technique and tooling are used to deform material or `constrained' when traditional tooling or techniques is used, but is constrained in some manner - for example the sheet is constrained at the edges. A `variant' technique describes a process that has been substantially modified from its traditional form, but uses a similar technique or tooling. The chassis column indicates the mechanical hardware used to physically manipulate and actuate the sheet and/or tooling. 
-
-% [ Comment on trends - \\ Except for hammering, most configurations use traditional tooling\\ It can be seen that a robot arm is commonly used in these systems - however, the stiffness of the system must be considered\\ ]
-
-
-%%%%%
+A summary of control characteristics for relevant `traditional' processes is given in Table \ref{tab:MechProcesses}. This outlines three main characteristics used to regulate the process. For comparison, manual techniques are also listed, using information collected in section \ref{sec:Manual}.
+ 
 
 The control strategies used to regulate the process are categorised and listed. A predetermined control strategy indicates a strategy that is explicitly defined by an operator whereas a rule based strategy is one where the strategy is generated from a set of formula. Other control strategies are unambiguous in their definition. Sensors that feed back information to the system for real time processing are also shown for various data types. If no sensors are installed, then the process is considered open loop.
 
-% [Comment on trends - Work carried out in section \ref{sec:tacitknowledge} demonstrated one of the key characteristics of the craftsman is that they are very cognisant, using many different senses . This is reflected in the manual processes by the craftsman using many different senses to...]
+% [Comment on trends - Work carried out in section \ref{sec:tacitknowledge} demonstrated one of the key enabling characteristics of the craftsman is that they are very cognisant, making use of the different senses . This is reflected in the manual processes by the craftsman using many different senses to...]
 
 The underlying knowledge/data that forms the basis of the control logic used in a process are also listed. These are arranged into five categories: Heuristic - when the underlying logic is based off a rational understanding of the process; Experimental - when knowledge is gained from a series of systematic physical experiments; Analytical - when knowledge is derived from a theoretical standpoint; FE - when data from simulation are used; Craftsman - when data captured from experienced craftsmen is used.
 
-Though all these processes strive toward full autonomy, none achieve this as worker input is still required at some level. Comparing processes autonomy is not straightforward as there are many different taxonomies available for ranking the level of autonomy (LoA) of a process \citep{Vagia2015AProposed, Frohm2008LevelsManufacturing}. Here,  Endsley's taxonomy is used \citep{Endsley1999LevelTask} as this specifically focuses on the automation of cognitive tasks (for example crafting) that require real time control \citep{Vagia2015AProposed}. The 10 LoA are shown in table \ref{tab:LoAEndsley}  and are determined by the allocation of four key roles being human (H) or computer (C) controlled.
+%Though all these processes strive toward full autonomy, none achieve this as worker input is still required at some level. Comparing processes autonomy is not straightforward as there are many different taxonomies available for ranking the level of autonomy (LoA) of a process \citep{Vagia2015AProposed, Frohm2008LevelsManufacturing}. Here,  Endsley's taxonomy is used \citep{Endsley1999LevelTask} as this specifically focuses on the automation of cognitive tasks (for example crafting) that require real time control \citep{Vagia2015AProposed}. The 10 LoA are shown in table \ref{tab:LoAEndsley}  and are determined by the allocation of four key roles being human (H) or computer (C) controlled.
 
-\begin{table}[h] 
-    \centering
-        \input{tables/EndsleyLoA}
-    \caption{Endsley's Level of Automation \citep{Endsley1999LevelTask}}
-    \label{tab:LoAEndsley}
-\end{table}
-
-This LoA does not indicate a process's ability to successfully form a range of parts, so a ranking of both flexibility and accuracy is assigned to each process. Due to each process having a unique range of geometric capabilities, the process flexibility defined in table \ref{tab:flexandaccuracy} is scaled relatively to the process's manual counterpart. 
-The accuracy metric is ... [Not sure how/what should be used here - maybe look toward Fig 22 in Closed-loop control of product properties in metal forming?]
+%\begin{table}[h] 
+  %  \centering
+    %    \input{tables/EndsleyLoA}
+    %\caption{Endsley's Level of Automation \citep{Endsley1999LevelTask}}
+    %\label{tab:LoAEndsley}
+%\end{table}
 
 
 
-
-\begin{table}[h] 
-    \centering
-\begin{tabular}{p{0.1\textwidth}>{\centering}p{0.25\textwidth}>{\centering}p{0.25\textwidth}>{\centering\arraybackslash}p{0.25\textwidth}} \toprule
-            & \multicolumn{3}{c}{Rank}                                                                                                                                                                  \\
-\cmidrule(lr){2-4}
-            & Low                                       & Medium                                             & High                                                                                     \\
-\cmidrule(lr){1-4}
-Flexibility & Only a set number of shapes can be formed & A small range of interpolated shapes can be formed & The full range of part shapes achievable by the manual counterpart process can be formed \\
-Accuracy    &   ?                                        & ?                                                    & ?                                                                                         \\
-\bottomrule
-\end{tabular}
-    \caption{Flexibility and accuracy taxonomy}
-    \label{tab:flexandaccuracy}
-\end{table}
 
 
 %Universal part production, akin to the skilled craftsman in their workshop has not yet been achieved, with most automated processes still requiring substantial human input on some level. Furthermore, with process combination not yet trialled, the individual deformation mechanics of each technique limit the levels of geometric variability achievable by each process. Here we review processes that are inspired by, or use traditional tooling/techniques to form parts and consider the hardware and control techniques used to automate production.
@@ -354,26 +309,25 @@ Accuracy    &   ?                                        & ?                    
 \newpage
 \section{Learning from Craftsmen} \label{sec:Learning}
 
-Though there are many automated adaptations of manual techniques used by the traditional smith, none of these processes are yet as versatile their manual counterpart. This implies that the large amounts of knowledge, gained through years of experience are being discarded by not further observing the smith and how they operate these processes. Furthermore there are a number of overlooked techniques used by the smith that might serve as a useful starting point for novel process development. Understanding these techniques and capturing the skilled actions of the smith is challenging due to the tacit nature of the processes. This gap in methodology however presents an opportunity to develop new approaches to this challenge. In this section, we look at examples of ways of capturing and utilising the skilled actions of craftsmen within and beyond the metal forming domain. There is a limited set of such activities in the literature, but they reveal the state of the art in this area and hint at future possibilities. 
+Though there are many automated adaptations of manual techniques used by the traditional smith, none of these processes are yet as versatile their manual counterpart. This implies that large amounts of knowledge, gained through years of experience are being discarded by not further observing the smith and how they operate these processes. Furthermore there are a number of overlooked techniques used by the smith that might serve as a useful starting point for novel process development. 
+
+Understanding and capturing the skilled actions of the smith is challenging due to the tacit nature of the processes. However this presents an opportunity to develop new approaches to this challenge. In this section, we look at examples from both within and beyond the metal forming domain for technologies/methods of capturing and utilising the skilled actions of craftsmen, . There is a limited set of such activities in the literature, but they reveal the state of the art in this area and hint at future possibilities. 
 
 \subsection{Learning from the community \label{sec:LfC}}
 Despite a decline in professional craftsmen, the art of manual metal smithing is kept alive by an active community of artisans, circulating a wealth of knowledge through a range of widely accessible resources. Though useful to the hobbyist or apprentice, these resources are often overlooked by the academic community as the content lacks in technical understanding and explicitly defined process capabilities. Nevertheless, they can provide a useful starting point for describing techniques used to form shapes, advise on correct machine/tool configurations and give useful tips on how to avoid common mistakes the inexperienced workman or newly commissioned technology might face.
 
-There are a number of written manuals aimed at training apprentice metal smith and hobbyists alike. Some of these manuals, such as Barr's sheet metal fabrication series \citep{Barr2013ProfessionalFabrication,Barr2019SheetProjects} detail step-by-step instructions for creating specific parts allowing other similar parts to be made by replicating procedures and slightly adjusting techniques. Other manuals, such as Timings \citep{Timings2008SheetMetalwork}, Thompson \citep{Thompson2007ManufacturingProfessionals} and Wakeford \citep{Wakeford1985SheetWork} take a more broad approach by detailing information about individual tools and techniques that can be used to create part shapes. Coppersmithing \citep{Fuller1904ArtForms} and silversmithing \citep{Hill2014ManufacturingProcesses} manuals detail similar techniques used to form material. There also exist manuals focusing specifically on the operation of a singular tool, such as wheeling \citep{Longyard2014LearningWheel} and spinning \citep{Tuells1912MetalUsed}, which demonstrate the complexity of these individual processes and the wide variety of techniques that can be used to operate a single process.
+There are a number of written manuals aimed at training apprentice metal smith and hobbyists alike. Some of these manuals, such as Barr's sheet metal fabrication series \citep{Barr2013ProfessionalFabrication,Barr2019SheetProjects} detail step-by-step instructions for creating specific parts allowing other similar parts to be made by replicating procedures and slightly adjusting techniques. Other manuals, such as Timings \citep{Timings2008SheetMetalwork}, Thompson \citep{Thompson2007ManufacturingProfessionals} and Wakeford \citep{Wakeford1985SheetWork} take a more broad approach by detailing information about individual tools and techniques that can be used to create part shapes. Coppersmithing \citep{Fuller1904ArtForms} and silversmithing \citep{Hill2014ManufacturingProcesses} manuals provide details on similar techniques used to form material. There also exist manuals focusing specifically on the operation of a singular tool, such as the English wheel \citep{Longyard2014LearningWheel} and spinning lathe \citep{Tuells1912MetalUsed}, such is the complexity of opperating these tools.
 
-Despite the thoroughness of these manuals, craftsmen often struggle to articulate the necessary tacit skills required for successful crafting \citep{Wood2009ACraftsmen}. This makes relaying information through manuscript challenging. Recorded instructional videos however give craftsmen the platform to more successfully convey the tacit nature of the task by enacting and thus demonstrating the process. Such resources are prevalent amongst a growing online community of craftsmen, connecting globally to both share and record their expertise. Examples of such content are very common and for the interest of our readers, we can cite a few sources of such work such as Ron Corvell's Hand Metalworking series % See here http://covell.biz/dvds/hand-metalworking-dvds/
-and [...some youtube channel??]
+Despite the thoroughness of these manuals, craftsmen often struggle to articulate the necessary tacit skills required for successful crafting \citep{Wood2009ACraftsmen}. This makes relaying information through manuscript challenging. Recorded instructional videos however give craftsmen the platform to more successfully convey the tacit nature of the task by enacting and thus demonstrating the process. Such resources are prevalent amongst a growing online community of craftsmen, allowing them to connect globally to share and record their expertise. Examples of such content are very common and for the interest of our readers, we can cite a few sources of such work such as Ron Corvell's Hand Metalworking series [See here http://covell.biz/dvds/hand-metalworking-dvds/]
+and [...??]
 
-As an alternative, there are training courses available where skilled craftsmen give interactive demonstrations and tutorials.  The opportunity to observe a master craftsman at work and emulate their work under their supervision is an excellent route to adopting their good habits and developing an instinct for the relevant processes and materials. An experience instructor can also indicate the comparative difficulty of different techniques and part geometries. Very often, such comparisons are not obvious to a novice, or even to trained engineers without practical experience. Designers of automated processes have found it beneficial to familiarise themselves with the manual counterpart through attending such courses during the initial stages of process development \citep{Ilangovan2016AnForming}.
+Training courses where skilled craftsmen give interactive demonstrations and tutorials on tools and techniques are another excellent, underutilised resource. The authors note that the opportunity to observe a master craftsman at work and emulate their work under their supervision is an excellent route to adopting their good habits and developing an instinct for the relevant processes and materials. An experience instructor can also indicate the comparative difficulty of different techniques and part geometries. Very often, such comparisons are not obvious to a novice, or even to trained engineers without practical experience. Designers of automated processes have found it beneficial to familiarise themselves with the manual counterpart through attending such courses during the initial stages of process development \citep{Ilangovan2016AnForming}.
 
 % EGL: YOU STARTED TALKING ABOUT DEMONSTRATION HERE AND ASKED FOR INPUT SO I ADDED A COUPLE OF SENTENCES. HOWEVER, THESE FIT BETTER IN THE NEXT SECTION, SO MOVE THERE AS YOU SEE FIT. THE POINT ABOUT LEARNING THE RELATIVE DIFFICULTY OF TECHNIQUES AND GEOMETRIES APPLIES TO DISCUSSIONS ON FORUMS ETC AS WELL THOUGH. OR TOPICS ON DIFFERENT TOOLS AND THEIR DIVERSE USES... 
 %
 
-%These resources can benefit process designers primarily during the initial stages novel process development. For example, designers have benefited from becoming familiar with the manual process prior to development of the mechanised variant \citep{Ilangovan2016AnForming}. These resources also be used to identify manual techniques that are developed over generations which can be mechanically replicated \citep{Allwood2019Folding-shearing:Change} or use as inspiration for a new process development \citep{Russo2020RaisingSpinning}.
-
-
 \subsection{Learning from Demonstration} \label{sec:LfD} 
-Much like the apprentice during the initial stages of their training, knowledge can be gained by observing a trained, skilled operator carrying out the process. Section \ref{sec:LfC} mentions how heuristic knowledge can be gained by process designers through such demonstration, however here we focus on quantitative data that can be captured from skilled workers and used directly to control automated processes.
+Much like the apprentice during the initial stages of their training, knowledge can be gained by observing a trained, skilled operator carrying out the process. Though section \ref{sec:LfC} briefly mentions how heuristic knowledge can be gained demonstration in in-person classes, here we focus on quantitative data that can be captured from skilled workers and used in the design or control of automated processes.
 
 Systems acquiring new skills from human expert demonstrators using data acquired through sensors is not new, with Learning from Demonstration (LfD)  an already well established field \citep{Ravichandar2020RecentDemonstration}. 
 However typical manufacturing applications within this field focus on more straightforward tasks such as robotic assembly \citep{Zhu2018RobotSurvey}. Despite this, we look for the various methods and technologies that can be used to capture the actions and techniques of the human operator can be used to capture the skilled actions of the craftsman.
@@ -381,82 +335,42 @@ However typical manufacturing applications within this field focus on more strai
 Data can be collected using a vast range of cheap and readily available sensors, and there already exists an extensive review of sensors used to capture different metrics used in industrialised metalforming processes \citep{Allwood2016Closed-loopForming}. Here, we focus on capturing data specific to manual metal smithing processes, extending our search beyond the domain of metalforming. The design activity pattern in Figure \ref{fig:DAP} provides a useful starting point to identify the sorts of data that is critical to traditional forming and that should be captured. This include metrics that the craftsman controls: the trajectory of the tools and workpiece as well as machine configuration and also consider what the craftsman might be responding to: feedback from both the tool and workpiece in different manifestations - visual feedback, force feedback etc. 
 
 \subsubsection{Capturing Geometry and Trajectories}
-The trajectory and position of the sheet and/or tool are key elements of the manufacturing strategy. The topography of the sheet is also paramount, as during most metal smithing operations, this is often the defined target metric the craftsman is working toward. Capturing these metrics is therefor vital to understand the craftsman's manufacturing strategy.
+The trajectory and position of the sheet and tool are key elements of the manufacturing strategy. The topography of the sheet is also paramount, as during most metal smithing operations, this is often the defined target metric the craftsman is working toward. Capturing these visual metrics is therefor vital to understand the craftsman's manufacturing strategy.
 
-Most processes reviewed in section \ref{sec:Mechanised} make use of some form of technology to capture the topology of the sheet. These are used either post process to analyse to the final form of the sheet, or in some cases used during the process as an integrated element of the control system. As demonstrated in the aforementioned review by Polybank \citep{Allwood2016Closed-loopForming} there are a vast array of technologies/methods that can be used to capture this type of data and for each given process, the selected technology depends on factors such as resolution, processing time, availability and cost. Expanding on this comprehensive review is beyond the scope of this paper.
+Most processes reviewed in section \ref{sec:Mechanised} make use of some form of technology to capture the topology of the sheet. These are used either post process to analyse to the final form of the sheet, or in some cases used during the process as an integrated element of the control system. As demonstrated in the aforementioned review by Polybank \citep{Allwood2016Closed-loopForming} there are a vast array of sensors and methods that can be used to capture this type of data. For a given process the required sensing method will be selected based on factors such as resolution, processing time, availability and cost. 
 
-There are fewer examples of technologies/methods that are used to capture the movement of the metal smith and their tools during manual processing. As part of the Mechatroforming approach, the trajectory of the sheet is tracked as it is manually worked  \citep{Ilangovan2016AnForming} using two vicon T-series cameras with the data collected used to populate the database control system. Similarly, the trajectory of a hand held hammer was also tracked when striking the sheet with velocity of the tool estimate and subsequently used to calculate the impact force on the sheet. Capturing the trajectory of the workpiece is also key to deriving control strategies in most of the cognitive driving strategies discussed in section \ref{sec:MechKraftformer}. 
+There are fewer examples of technologies/methods used to capture the movement of the metal smith and their tools during manual processing. As part of the Mechatroforming approach, the trajectory of the sheet is tracked as it is manually worked  \citep{Ilangovan2016AnForming} using two vicon T-series cameras with the data collected used to populate the database control system. Similarly, the trajectory of a held hammer is tracked when striking the sheet to estimate the impact force on the sheet. The trajectory of the workpiece as it is manually worked is also captured as part of the cognitive driving strategies discussed in section \ref{sec:MechKraftformer}. 
 
-Looking beyond the field of metalforming, there are a number of technologies and methods capable of tracking human motions, which can be used to subsequently capture tool/sheet trajectories to identify patterns/techniques. This is currently a rapidly expanding field given the interest in computer vision. Data is collected through either worn sensors or through colour (RGB) data or sensors combining colour and depth (RGBD).  
+Looking beyond the field of metalforming, there are a number of technologies and methods capable of tracking human motions, which can be used to subsequently capture tool/sheet trajectories to identify patterns/techniques. This is currently a rapidly expanding field, given recent interest in computer vision [ref?]. Data is collected through either worn sensors or through vision based systems.
 
-Wearable technologies
-In medical research, there are reviews covering wearable sensors can be used to track human motion, gait and musculoskeletal functions \citep{Homayounfar2020WearableChallenges}.
-
-Vision based systems can collect RGB or RGBD data from a range of sources. Processing these streams of data
-are handcrafted, or more recently make use of 
-
-%A popular solution for tracking motions is to use cameras with integrated depth sensors, such as a Microsoft Kinect. This has been used to track workpiece deformations during the operation of Rossi's mechanised English wheel \citep{Rossi2018a}. Beyond the domain of metal forming, there are a variety of reviews that demonstrate the effectiveness of this low cost sensor for various applications and  human motion tracking capabilities \citep{Han2013,Lun2015}. In a manufacturing context, this has been used in tracking human motion for collaborative robots \citep{Palmieri2020}, identifying worker movement patterns \citep{Escorcia2012} and has also been integrated into automated systems carrying out complex manual assembly processes \citep{Caruso2017}. 
-
-
+Vision based systems collect data from sensors capturing colour (RGB) or a combination of colour and depth (RGBD) \citep{Zhang2019AMethods}. The challenge in using these types sensors lies in processing streams of data to identify movements and actions. Though off the shelf technologies are available with this capability built in (for example the Microsoft kinect), this can be achieved using generic, all-purpose cameras with data processed using one of the many different methods outlined in a number of comprehensive reviews \citep{Zhang2019AMethods,Beddiar2020Vision-basedSurvey}. Wearable technologies are electromechanical devices that attached to the body and record movements. Though the processing of data is more straightforward, these technologies are often more expensive and obtrusive than visual based systems. Nevertheless, there are again a number of comprehensive reviews into the state of the art of this type of technology used in medical \citep{Homayounfar2020WearableChallenges} and sport \citep{Taborri2020SportOverview} applications. [there are many more reviews we can add here]
 
 \subsubsection{Capturing Forces (Haptics)}
 In most manual forming processes, human operators are in physical contact with the sheet, whether directly with their limbs or indirectly through the tools they wield. In addition to visual information, then, they can also use haptic feedback to adjust and measure their actions. The word \textit{haptic} refers to anything to do with the sense of touch. During forming, this might be the evolving stiffness and strength of the workpiece, as well as intended or unintended vibrations or other mechanical effects can be monitored by craftsmen through this sense. Indeed, panel beaters often describe the sensation of feeling the material as it is worked. The response to haptic feedback can be either a conscious change in manufacturing strategy, or a more tacit change in the force applied to deform the workpiece. 
 
-Haptic feedback is a prominent feature in manual spinning. During this process, the contact between the workpiece and the craftsman is mediated through the stick-shaped tool, which is held by the craftsman under the armpit and used in combination with a fulcrum pin to deform the rotating workpiece (see figure [..]). Haptic feedback can be used by the craftsman to gather important information on the workpiece, including thinning of the blank and hardening of the material. Crucially, force and vibration feedback are used to check that the workpiece is fixing itself tightly to the mandrel beneath, and to monitor its tendency to buckle. Though force feedback is used on many different automated spinning machines \citep{Arai2006Force-controlledMotors}, no study known to the authors has attempted to measure these forces during the manual process. However, \citep{Russo2019HapticSpinning} implemented a haptic spinning system to allow a human operator to control the working roller of a CNC spinning lathe, while providing them with force feedback from the workpiece. The system employs an off-the-shelf force-feedback joystick (known as Phantom Desktop and commercialised today by 3D Systems Inc.) in combination with loadcells installed on the two main motion axes of the roller. Using this system, the researchers have invited experience spinning craftsman and recorded their actions in a series of over 70 experimental trials, making the database available \citep{Russo2020}[what reference is this?]. The force data can be used as an alternative or together with the geometrical trajectory to design better toolpaths in spinning [Have we got an example of this?]. Moreover, oscillations in the data can potentially be used to check whether wrinkling is about to happen. 
+Haptic feedback is a prominent feature in manual spinning. During this process, the contact between the workpiece and the craftsman is mediated through the stick-shaped tool, which is held by the craftsman under the armpit and used in combination with a fulcrum pin to deform the rotating workpiece (see figure \ref{fig:SpinningProcess}). This haptic feedback can be used by the craftsman to gather important information on the workpiece, including thinning of the blank and hardening of the material. Crucially, force and vibration feedback are used to check that the workpiece is fixing itself tightly to the mandrel beneath, and to monitor its tendency to buckle. Though force feedback is used on many different automated spinning machines \citep{Arai2006Force-controlledMotors}, no study known to the authors has attempted to measure these forces during the manual process. However, \citep{Russo2019HapticSpinning} implemented a haptic spinning system to allow a human operator to control the working roller of a CNC spinning lathe, while providing them with force feedback from the workpiece. The system employs an off-the-shelf force-feedback joystick (known as Phantom Desktop and commercialised today by 3D Systems Inc.) in combination with loadcells installed on the two main motion axes of the roller. Using this system, the researchers have invited experience spinning craftsman and recorded their actions in a series of over 70 experimental trials, making the database available \citep{Russo2020ResearchSpinning}. The force data can be used as an alternative or together with the geometrical trajectory to design better toolpaths in spinning. Moreover, oscillations in the data can potentially be used to check whether wrinkling is about to happen. 
 
-In an effort to begin to automate, similar data has been collected for other manual manufacturing processes that are sensitive to haptic feedback. A mechatronic device developed by Kalt et al is used to measure force, torque, vibration on the tool during a manual polishing of metallic surfaces alongside tracking tool trajectory and feed rates \citep{Kalt2016TowardsOperation}. Similar tools are developed for use in capturing data for manual grinding \citep{Phan2018InstrumentationWorkpiece} and wood planing \citep{Montebelli2015OnTasks}.
+In an effort to begin to automate other manual manufacturing processes that are sensitive to haptic feedback, similar data has been collected . A mechatronic device developed by Kalt et al is used to measure force, torque, vibration on the tool during a manual polishing of metallic surfaces as well as tracking tool trajectory and feed rates \citep{Kalt2016TowardsOperation}. Similar tools are developed for use in capturing data for manual grinding \citep{Phan2018InstrumentationWorkpiece} and wood planing \citep{Montebelli2015OnTasks} [probably need to give some more detail on this?].
 
 
 \subsubsection{Capturing Machine Configuration}
-The craftsman regularly changes tools and adjust the machine configuration when crafting - for example changing spindle speed during spinning or selecting a different lower tool when wheeling. Despite this, in most mechanised sheet forming applications, only one machine set up is considered, possibly to reduce complexity. However as different machine configurations are often manipulated by craftsman during the manual process, these must be considered as key elements in the manufacturing strategy.
+The craftsman regularly changes tools and adjust the machine configuration when crafting - for example changing forming tool during spinning or lower tool pressure when wheeling. Despite this, in most mechanised sheet forming applications, only one machine set up is considered, possibly to reduce complexity. However as different machine configurations are often manipulated by craftsman during the manual process, these must be considered as key elements in the manufacturing strategy.
 
-Capturing the different machine configurations used during the manual smithing is trivial as these changes are often either indiscreet - such as tool changes, or discreet but measurable - such as changing lower anvil height when wheeling. However the author could find no examples of tracking these configurations during manual processing. Beyond metalforming however, Manorathna gives a prominent example of how manipulating machine parameters can be used to control the manufacturing process by tracking various parameters for expert and novice welders when working \citep{Manorathna2017HumanAutomation}. 
+Capturing the different machine configurations used during  manual smithing is trivial as these changes are often either indiscreet - such as tool changes, or measurable - such as changing lower anvil height when wheeling. However the author could find no examples of tracking these configurations during manual processing. Beyond metalforming however, Manorathna gives a prominent example of how manipulating machine parameters can be used to control the manufacturing process by tracking various parameters for expert and novice welders when working \citep{Manorathna2017HumanAutomation}. 
 
-Though not explicitly learning from craftsman, systematic investigations into the effects of different machine configurations for some processes have been carried out experimentally or by using FE simulation. These include the affect on tool forces and modes of failure for different feed ratios (mandrel speed to tool feed rate) \citep{Sugar2016AnalysisSteels,Essa2010OptimizationAnalysis} and tool shapes \citep{El-Khabeery1991OnCups,Essa2010OptimizationAnalysis} in spinning and the effects of lower tool shape and height on both tool force and deformation characteristics in wheeling [Bowen et al ICTP 21 paper]. Furthermore, comprehensive reviews on the influence of process parameters on deformation in incremental sheet forming, a process often associated with the metalsmith processes \citep{Music2012TheTools}, suggest the importance of process configuration \citep{Gatea2016ReviewForming,Gohil2021ReviewProcess}.
+Though not explicitly learning from craftsman, systematic investigations into the effects of different machine configurations for some processes demonstrate the effect these can have on deformation. In spinning for example, the affect on tool forces and modes of failure has been investigated for different feed ratios (mandrel speed to tool feed rate) \citep{Sugar2016AnalysisSteels,Essa2010OptimizationAnalysis} and tool shapes \citep{El-Khabeery1991OnCups,Essa2010OptimizationAnalysis}. The effects of lower tool shape and height on both tool force and deformation characteristics during wheeling has also been investigated [Bowen et al ICTP 21 paper]. Furthermore, comprehensive reviews on the influence of process parameters on deformation in incremental sheet forming, a process often associated with the metalsmith processes \citep{Music2012TheTools}, suggest the importance of process configuration \citep{Gatea2016ReviewForming,Gohil2021ReviewProcess}.
 
+\subsubsection{Learning from collected data}
+Though data can be collected using a variety of cheap and readily available sensors, designers who are often not skilled craftsmen might not have the ability to interpret this data - that is to say, how are they to evaluate a good technique/set of data from a bad one, when they themselves are not experts? 
+%Furthermore, additional challenges exist in collating data types to be used harmoniously. 
+This challenge of eliciting techniques and knowledge from data acquired from skilled craftsmen is not limited to metal forming and there are different groups investigating how similar tacit knowledge can be understood and used.
 
+A straightforward method of identifying skilled techniques is by analysing and comparing the actions of skilled and unskilled craftsmen carrying out identical tasks. Ikemoto studies the manufacturing strategies of 5 expert and 5 non-expert craftsmen repairing identically damaged car panel, using only a hammer.  Alongside completing the job to a higher standard, patterns emerge amongst experts for different metrics that are recorded, including strike positions \citep{Ikemoto2018ProcessRepair} and the time spent on tasks \citep{Ikemoto2016ARepair}. This begins to highlight the skilled actions of the expert craftsmen gained over years of experience that can be utilised in automated processes. Similar studies comparing skilled and novice workers have been undertaken for other manual manufacturing processes including machine configurations in a welding processes \citep{Manorathna2017HumanAutomation}, stroke directions in both hand lay-up of glass fibre reinforced composites \citep{Xie2016EffectMethod, Kikuchi2016ResearchLay-up} and biometric data (joint angles) during traditional stone knapping \citep{Rein2014MovementTraditions}. 
 
-%\subsubsection{Capturing data using other methods/technologies}
+Having identified a skilled cohort, knowledge can be gained from identifying techniques and patterns that are repeated. An early example of this, is the identification of 15 commonly used gripping techniques used by skilled machinists to grasp objects \citep{Cutkosky1986ModellingHands} which nowadays is still widely used for the design of robot arm grippers \citep{Feix2016TheTypes}. This technique of analysing the actions of a skilled cohort has been used to identify 7 rules of spinning... [talk about Iaccopo's 7 rules of spinning]
+Similar methods are used to identify techniques in manually layering pre-impregnated woven materials, using data collected from video analysis \citep{Elkington2015HandProcess, Elkington2015StudyingLayup} and later from quantitative movement tracking \citep{Prabhu2017DigitisationTechnology}. From this, new automated processes can be developed [EL, have you got the ref?]
 
-%Here, we outline any other technologies and methods that might be used to extract data/knowledge from skilled craftsmen. Topics are unstructured and 
-
-%In the examples listed so far, data has been gathered from craftsmen physically carrying out the process in person. Conversely, teleoperation platforms are designed such that the worker controls the process separately, through an interface. The benefits of this method include easier collection and mapping of data. Limitations include not fully representing the process, however  development of new, augmented reality technologies can provide a more immersive and realistic experience.
-
-%A teleoperation was used in the aforementioned spinning set up by Russo which allowed data to be gathered using a haptic device. Other examples of such platforms used in high skilled manual crafting include the development of 
-
-
-%In \citep{Nemec2018} a virtual mechanism is developed for polishing and in \citep{Liu2014} a teleoperated virtual welding platform is developed]
-
-%Another useful method of collecting data from the skilled worker is through transcription of verbal cues. Collecting..
-
-
-
-
-\subsection{Learning from collected data}
-
-Though data can be collected using a variety of cheap and readily available sensors, designers who are often not skilled craftsmen might not have the ability to interpret this data - that is to say, how are they to evaluate a good technique/set of data from a bad one, when they themselves are not experts? Furthermore, how can different data types be augmented and used harmoniously? This challenge of eliciting techniques and knowledge from data acquired from skilled craftsmen is not limited to metal forming as there are different groups investigating how similar tacit knowledge can be utilised. Here we identify some of these groups and review the techniques they use to understand the data collected by craftsmen.
-
-\subsubsection{Comparison techniques}
-A useful method of identifying `good' techniques can be by analysing and comparing the actions of skilled and unskilled craftsmen carrying out identical tasks. 
-
-Studies comparing such workers repairing identically damaged car panels, using only a hammer demonstrate the difference skilful technique can make, with skilled craftsmen completing the job quicker and with less strikes \citep{Ikemoto2016}. Further analysing the time spent on different activities throughout the job (hammering, inspecting, adjusting etc) show trends among skilled craftsmen on the sequence of activities as well as the time spent on each activity \citep{Takai2020}. 
-
-Beyond the domain of metalforming, similar studies have been undertaken. These include the comparison of skilled and novice welders \citep{Manorathna2017},... [can we find some other examples?].
-
-\subsubsection{Identifying common patterns}
-Having identified a skilled cohort, a lot can be gained from identifying techniques and patterns that are repeated. An early, well cited example of this is the identification of 12 different gripping techniques used by machinists to grasp objects \citep{cutkosky1986modeling}. These are defined as the consensus of a group of machinists by observing the positions of the wrist and fingers and by where the forces are exerted on the part, which has now developed into range of quantitative taxonomies used to assess different grasps \citep{Feix2016}, which are used in the design of robot arm grippers.
-
-These sorts of methods have been used in analysing manual manufacturing process, though not in the metalforming domain. Repeated techniques used in manually layering pre-impregnated woven materials are identified similar using motion tracking methods \citep{Kikuchi2014, Elkington2015}. From this, new automated processes can be developed [EL: have you got the citation]. Other examples include comparing and grouping quantitative, intricate movement patterns of novice and expert stone knappers \citep{Rein2014}.  
-
-\subsubsection{Using databases/training NNs}
-Databases and Neural Networks (NNs) have been used in a few of the processes described in section \ref{sec:MechanisedProcess}. These are made enabled by sensors and/or models that generate an abundance of data which can then be used to populate/train these databases/NNs. This new data driven approach to process control is synonymous with the next industrial revolution - I4.0 \citep{ZHONG2017616}. %This sentence is a direct copy and paste from the intro so might need changing.
-
-[Give examples of driving which use experimentally formed data]
-However, only a select few of these use data gathered from skilled craftsmen, instead gathering data from either FE simulations or parametric trials  - see table \ref{tab:Process}.
-The architecture of the system used by Rossi is set up conveniently so that every sheet that is formed by the machine is used to further train the neural network that specifies manufacturing structure \citep{Rossi2018a}.
-
-[To be included: Generating toolpaths for automated production, using data collected from experts \citep{Ng2017}. In \citep{French2019}, process parameters of skilled welders are recorded. This data is then mined for the transferable control input parameters required to replicate and improve human performance. In \citep{Kumar2018}, data from various process parameters is collected from   qualified welding technicians and used to train a NN. This allows the skill of a welder can be evaluated, such that it aligns with the ranked position from their training institute.
-
+There are a few notable cases where LfD has been used to control systems, where data has specifically been gathered from skilled craftsmen. Using force and positional data, toolpaths for automated production, using data collected from experts \citep{Ng2017CapturingGrinding}. [need to expand on this and can we find any more examples?]
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - %
@@ -465,41 +379,73 @@ The architecture of the system used by Rossi is set up conveniently so that ever
 % In \citep{Phan2020} a practical approach to estimate human joint stiffness during tooling tasks for the purpose of programming a robot by demonstration.
 
 
-
-
-
-
-
 \section{Discussion}
 
-[Here, I have written down some thoughts on what I think could be included in the discussion part of the paper.]
+By collectively reviewing an array of manual processes used by the craftsman in section \ref{sec:Manual}, a simple taxonomy of manual techniques used to form sheet metal parts is proposed - Figure \ref{fig:ManualTaxonomy}. These are grouped according to the tooling used, with each technique having a unique deformation mechanism and geometric forming capability. However the ad hoc nature of the manufacturing paradigm implies there are several more processes yet to be listed, which includes tools not considered in this review - bead rollers for example.
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[]{Taxonomy.pdf}
+    \caption{Taxonomy of manual processes [Could add * to processes that have been mechanised..? Also need to go back to section 1 and make sure each listed technique is mentioned]}
+    \label{fig:ManualTaxonomy}
+\end{figure}
+
+Many of the techniques listed in the taxonomy remain ambiguous, with both deformation mechanism and specific procedure not yet explicitly defined. Interestingly however, it can be seen that many of these processes are essentially thinning/stretching or thickening/compressing the sheet locally to incrementally form shapes. A more thorough understanding of these traditional techniques developed over generations could lead to improved capabilities in modern processes as demonstrated by the fold-shearing and raising by spinning processes. 
+
+Fundamental to the craftsman's versatility, is the ability to use a series of different processes to form a greater range of parts. Figure \ref{fig:ShapeDevBowl} shows anecdotally the various ways which the craftsman might form a deep bowl using different tools and techniques. [talk about the significance of this - why they might select certain tools (previous experience, other material properties, availability)]. Though individual processes have received attention, the effects of, and automation of process combination has yet to be attempted.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Images/Bowl.pdf}
+    \caption{Different manufacturing strategies using different techniques to form a deep bowl}
+    \label{fig:ShapeDevBowl}
+\end{figure}
+
+
+\vspace{4em}
+*From here to the end of the section needs finishing*
+\vspace{4em}
+
+merits of automating these manual processes is multifaceted. Alongside the inherent flexibility, with the sheet is not constrained at the boundary, springback and residual stresses (common challenges with many modern processes) is less of an issue. Automating processes is not a straightforward task
+
+Without doubt, spinning has received the most attention from industry. [why]. Nevertheless, automated, reliable manufacturing strategy for universal part production is not yet achieved. 
+
+A very limited subset of process parameters and sensing are usually included in these invented processes. Only a small subset of parameters are also trialled (forming force, tool shape etc)
+
 
  % EGL: I wonder if we should comments how all these processes are essentially thinning/stretching or thickening/compressing the sheet locally and we worry about the same failures in all of them (wrinkling, tearing). We can also say that because in all cases we have free boundaries, springback and residual stresses (common challenges with many modern processes) is less of an issue.
  
- 1 - There are many different traditional crafting processes.
-There is no taxonomy of processes
-The art of smithing is potentially being lost
+ %1 - There are many different traditional crafting processes.
+%There is no taxonomy of processes
+%The art of smithing is potentially being lost
 
-2 - In mechanised variant's the specific techniques are often overlooked - hammering is a prime example.
-Furthermore, there is no integration of processes to form an overall shape.
+%2 - In mechanised variant's the specific techniques are often overlooked - hammering is a prime example.
+%Furthermore, there is no integration of processes to form an overall shape.
  
-3 -  Mechanised variant's are viable
-A very limited subset of process parameters and sensing are usually included in these invented processes. 
-Given the advances in technology, the process of physical mechanisation is straightforward. 
+%3 -  Mechanised variant's are viable
+%A very limited subset of process parameters and sensing are usually included in these invented processes. 
+%Given the advances in technology, the process of physical mechanisation is straightforward. 
 
 
-\begin{enumerate}
+%\begin{enumerate}
 
-\item A lot of the panel beater's processes are ad hoc and/or not clearly defined. As well as scope for defining a more rigorous taxonomy, this also implies there are several opportunities to develop new techniques through closer observation of these craftsman.
-\item To achieve a system that is as versatile/flexible as the smith, a combination of processes will likely be needed. This will be challenging until individual processes have been fully established.
-\item With the decline in traditional smiths, the `art' of crafting (knowledge base of techniques and processes) is in danger of being lost. Establishing mechanised processes preserves these.
-\item There are technologies (sensors, control strategies) that have been used in some mechanised processes that could be applicable to other processes
-\item As mechanised processes are not yet as versatile as their manual counterpart, there is still a lot we can learn. This can be done using some of the many sensors used in the domain of LfD.
-\item The similarities between NNs and the craftsman, with regards the way they both learn through experience. 
-\item Database/ ANN approaches provide a method that can be populated by different data. For example, FE and human skill capture is used to inform the mechatroforming approach. These are useful as increasing computational powers should bring about more data rich simulations which could be used to populate databases in a cost effective manner.]
-\item The studies in \ref{tab:MechProcesses} support the earlier argument [what earlier arguement?] that a very limited subset of process parameters and sensing are usually included in these invented processes. Only a small subset of parameters are also trialled (forming force, tool shape etc)
+%\item A lot of the panel beater's processes are ad hoc and/or not clearly defined. As well as scope for defining a more rigorous taxonomy, this also implies there are several opportunities to develop new techniques through closer observation of these craftsman.
+%\item To achieve a system that is as versatile/flexible as the smith, a combination of processes will likely be needed. This will be challenging until individual processes have been fully established.
+%\item With the decline in traditional smiths, the `art' of crafting (knowledge base of techniques and processes) is in danger of being lost. Establishing mechanised processes preserves these.
+%\item There are technologies (sensors, control strategies) that have been used in some mechanised processes that could be applicable to other processes
+%\item As mechanised processes are not yet as versatile as their manual counterpart, there is still a lot we can learn. This can be done using some of the many sensors used in the domain of LfD.
+%\item The similarities between NNs and the craftsman, with regards the way they both learn through experience. 
+%\item Database/ ANN approaches provide a method that can be populated by different data. For example, FE and human skill capture is used to inform the mechatroforming approach. These are useful as increasing computational powers should bring about more data rich simulations which could be used to populate databases in a cost effective manner.]
+%\item The studies in \ref{tab:MechProcesses} support the earlier argument [what earlier arguement?] that a very limited subset of process parameters and sensing are usually included in these invented processes. Only a small subset of parameters are also trialled (forming force, tool shape etc)
 
-\end{enumerate}
+%\end{enumerate}
+
+\section{Conclusion}
+
+For the first time, manual techniques used by the metal smith to form sheet metal parts have been considered collectively in an effort to begin to understand this traditional form of manufacturing. Using a range of academic and atypical resources, different techniques used by the smith to form sheet are collated, grouped by the respective tooling used to carry out the process. The review is limited to four tools - hammer, kraftformer, English wheel and spinning lathe. A taxonomy of individual processes is suggested, though many tools and techniques used by smith remain undocumented.
+
+The flexibility of the smith is realised and a number of mechanised processes have been developed in pursuit of new, flexible forming processes. A review into these new processes is carried out, focusing on processes inspired by the four aforementioned tools....[to be finished]
+
 
 
 

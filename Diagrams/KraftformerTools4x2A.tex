@@ -48,5 +48,16 @@
 \node[yshift=1.7cm] at (NodeStraightnening) {Straightnening};
 \node[yshift=1.7cm] at (NodeEdging) {Edging};
 
+
+\foreach \c [count=\i from 0] in {{Sheet},{Tooling},{Motion of Tooling}}
+    \pgfmathsetmacro\y{\i * 2} % Spacing
+    \node at (14,\y) (Node\c) {\c};
+
+\node[yshift=1cm] at (NodeSheet) () {\includegraphics[width=2cm]{Diagrams/Sheet.png}};
+\node[yshift=1cm] at (NodeTooling) () {\includegraphics[width=2cm]{Diagrams/Tooling.png}};
+\node[yshift=1cm,rotate=270] at (NodeMotion of Tooling) () {\includegraphics[width=1.3cm]{Diagrams/Motion of Tooling.png}};
+
+
+
 \end{tikzpicture}
 \end{document}

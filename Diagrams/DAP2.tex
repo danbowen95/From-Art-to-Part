@@ -1,6 +1,10 @@
 \documentclass[border=5pt]{standalone}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.text}
 \usetikzlibrary{shapes,snakes}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations}
@@ -63,6 +67,9 @@ lE/.style={rounded corners,thick,-{Latex[length=2.5mm]}}]
 \filldraw[fill=green!5!white, draw=black] (9.1,5.9) rectangle (11.5,7.5);
 \node[anchor=north west] at (9.1,7.5) {\textit{Environment}};
 
+\def\myshift#1{\raisebox{-2.5ex}}
+\def\myshifta#1{\raisebox{1ex}}
+
 \node[S] at (10,10) (Imain) {I};
 \node[S] at (10,8.5)  (Emain)   {E};
 \node[T] at (12,9.25)  (C) {};
@@ -80,19 +87,24 @@ lE/.style={rounded corners,thick,-{Latex[length=2.5mm]}}]
 \draw[lE] (Split) -- (Sheet);
 \draw[lE] (Split) -- (Tool);
 
-\draw[lI] ([yshift=-5]Sheet.west) -| ([yshift=5]8.5,10) -- ([yshift=5]Imain.west);
+\draw[lI] ([yshift=-5]Sheet.west) -| ([yshift=5,xshift=-1]8.5,10) -- ([yshift=5]Imain.west);
+\node[rotate=90,yshift=34,xshift=5,anchor=east] at (Imain.west) () {\scriptsize visual feedback};
 
-\draw[lI] ([yshift=5]Sheet.west) -| ([yshift=-5,xshift=5]8.5,10) -- ([yshift=-5]Imain.west);
+\draw[lI] ([yshift=5]Sheet.west) -| ([yshift=-5,xshift=10]8.5,10) -- ([yshift=-5]Imain.west);
+\node[rotate=90,yshift=23,xshift=-5,anchor=east] at (Imain.west) () {\scriptsize audio feedback};
 
 \draw[lE] ([xshift=5]Tool.south) |- ([yshift=-5]Sheet.east);
 \draw[lE] ([yshift=5]Sheet.east) -| ([xshift=-5]Tool.south);
 
-\draw[lE] (Tool) |- ([yshift=5]11,11.2) -| ([xshift=-5]Imain.north);
-\draw[li] ([xshift=3]Tool.north) |- ([yshift=8]11,11.2) -| ([xshift=-5]Imain.north);
+\draw[li,-{Latex[length=2.5mm]}] (Tool) |- ([yshift=5]11,11.2) -| ([xshift=-5]Imain.north);
+\node[yshift=30,xshift=-5,anchor=west] at (Imain.north) () {\scriptsize haptic feedback (tool)};
 
-\draw[lE] ([xshift=-10,yshift=-5]Sheet.north) |- ([yshift=-5]11,11.2) -| ([xshift=5]Imain.north);
-\draw[li] ([xshift=-7,yshift=-3]Sheet.north) |- ([yshift=-2]11,11.2) -| ([xshift=5,yshift=2]Imain.north);
+%\draw[li] ([xshift=3]Tool.north) |- ([yshift=8]11,11.2) -| ([xshift=-5]Imain.north);
 
+%\draw[lE] ([xshift=-10,yshift=-5]Sheet.north) |- ([yshift=-5]11,11.2) -| ([xshift=5]Imain.north);
+\draw[li,-{Latex[length=2.5mm]}] ([xshift=-7]Sheet.north) |- ([yshift=-2]11,11.05) -| ([xshift=5]Imain.north);
+\node[yshift=18,xshift=2,anchor=west] at (Imain.north) () {\scriptsize haptic feedback (grasp)};
+%\node[xshift=-12,yshift=25, rotate=90] at (Sheet.north) () {\scriptsize haptic feedback};
 
 \node[] at (10.5,5) (l1) {};
 \node[] at (13.5,5) (l2) {};

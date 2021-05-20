@@ -1,0 +1,63 @@
+\documentclass[9pt,border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+\begin{tikzpicture}
+
+
+
+\foreach \c [count=\i from 0] in {{Stretching},{Shrinking},{Finish Forming},{Flattening}} 
+    \pgfmathsetmacro\y{\i * 3.5} % Spacing
+    \node at (\y,5) (Node\c) {};
+    
+\foreach \c [count=\i from 0] in {{Doming},{Planishing},{Straightnening},{Edging}} 
+    \pgfmathsetmacro\y{(\i * 3.5)} % Spacing
+    \node at (\y,0) (Node\c) {};
+    
+    
+
+    
+\node[] at (NodeStretching) () {\includegraphics[height=2.2cm]{Images/Stretching.png}};
+\node[] at (NodeShrinking) () {\includegraphics[height=2.2cm]{Images/Shrinking.png}};
+\node[] at (NodeFinish Forming) () {\includegraphics[height=2.2cm]{Images/Finish Forming.png}};
+\node[] at (NodeFlattening) () {\includegraphics[height=2.2cm]{Images/Flattening.png}};
+\node[] at (NodeDoming) () {\includegraphics[height=2.2cm]{Images/Doming.png}};
+\node[] at (NodePlanishing) () {\includegraphics[height=2.2cm]{Images/Planishing.png}};
+\node[] at (NodeStraightnening) () {\includegraphics[height=2.2cm]{Images/Straightening.png}};
+\node[] at (NodeEdging) () {\includegraphics[height=2.2cm]{Images/Edging.png}};
+
+\node[yshift=-1.7cm] at (NodeStretching) {(a)};
+\node[yshift=-1.7cm] at (NodeShrinking) {(b)};
+\node[yshift=-1.7cm] at (NodeFinish Forming) {(c)};
+\node[yshift=-1.7cm] at (NodeFlattening) {(d)};
+\node[yshift=-1.7cm] at (NodeDoming) {(e)};
+\node[yshift=-1.7cm] at (NodePlanishing) {(f)};
+\node[yshift=-1.7cm] at (NodeStraightnening) {(g)};
+\node[yshift=-1.7cm] at (NodeEdging) {(h)};
+
+\node[yshift=1.7cm] at (NodeStretching) {Stretching};
+\node[yshift=1.7cm] at (NodeShrinking) {Shrinking};
+\node[yshift=1.7cm] at (NodeFinish Forming) {Finish Forming};
+\node[yshift=1.7cm] at (NodeFlattening) {Flattening};
+\node[yshift=1.7cm] at (NodeDoming) {Doming};
+\node[yshift=1.7cm] at (NodePlanishing) {Planishing};
+\node[yshift=1.7cm] at (NodeStraightnening) {Straightnening};
+\node[yshift=1.7cm] at (NodeEdging) {Edging};
+
+
+\foreach \c [count=\i from 0] in {{Sheet},{Tooling},{Motion of Tooling}}
+    \pgfmathsetmacro\y{\i * 4+1.25} % Spacing
+    \node at (\y,-4) (Node\c) {\c};
+
+\node[yshift=1cm] at (NodeSheet) () {\includegraphics[width=2.2cm]{Diagrams/Sheet.png}};
+\node[yshift=1cm] at (NodeTooling) () {\includegraphics[width=2.2cm]{Diagrams/Tooling.png}};
+\node[yshift=1cm] at (NodeMotion of Tooling) () {\includegraphics[width=1.5cm]{Diagrams/Motion of Tooling.png}};
+
+
+
+\end{tikzpicture}
+\end{document}

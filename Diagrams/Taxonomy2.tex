@@ -43,10 +43,10 @@
     \draw[->] ([xshift=-2.5em)]English Wheel.south) |- (\x);
     }
     
-\foreach \x [count=\xi] in {Forming, Finishing}{
+\foreach \x [count=\xi] in {Multipass Forming, Shear Forming, Finishing}{
     \pgfmathsetmacro\result{\xi * -1 +8}
-    \node[level 3] at (12.5,\result) (\x) {\x};
-    \draw[->] ([xshift=-2.5em)]Spinning Lathe.south) |- (\x);
+    \node[level 3,text width=6.5em] at (12.5,\result) (\x) {\x};
+    \draw[->] ([xshift=-3em)]Spinning Lathe.south) |- (\x);
     }
     
 \foreach \x [count=\xi] in {Stretching,Shrinking,Finish Forming, Flattening}{

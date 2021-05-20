@@ -19,13 +19,13 @@
 \draw[help lines, color=gray!30, dashed] (0,0) grid (10,10);
 
 \node (o) at (0,0) {};
-\node[scale=1.5] (xmid) at ($(o)!0.5!(xmax)$) {Variety of Models};
-\node[text width=1cm,align=center,scale=1.5] (ymid) at ($(o)!0.2!(ymax)$) {Volume \\ per \\ Model};
+\node[scale=1.5] (xmid) at ($(o)!0.5!(xmax)$) {Varieties of Parts};
+\node[text width=1cm,align=center,scale=1.5] (ymid) at ($(o)!0.2!(ymax)$) {Volume \\ of \\ Parts};
 
 \draw[->,ultra thick] (o.center) -- (xmid) -- (xmax);
 \draw[->,ultra thick] (o.center) -- (ymid) -- (ymax);
 
-\node[shape=circle,draw] at (8,1) (n1) {};
+\node[shape=circle,draw] at (7.5,0.5) (n1) {};
 \node[shape=circle,draw] at (1.5,2.5) (n2) {};
 \node[shape=circle,draw] at (1,7) (n3) {};
 \node[shape=circle,draw] at (3,6.5) (n4) {};
@@ -46,22 +46,22 @@
 
 
 
-\draw [->,thick] (11,1.2) -- ([bend right=15] n1);
+\draw [->,thick] (10,0.4) -- ([bend right=15] n1);
 
 \def\myshift#1{\raisebox{-2.5ex}}
-\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Craft Production}}}] (n2) to [bend right=15]  (n1);
+\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\small\sffamily\myshift|Craft Production}}}] (n2) to [bend right=15]  (n1);
 %
 \def\myshift#1{\raisebox{-2.5ex}}
-\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Mass Production}}}] (n3) to [bend right=15]  (n2);
+\draw [<-,thick,postaction={decorate,decoration={text along path,text align=center,text={|\small\sffamily\myshift|Mass Production}}}] (n3) to [bend right=15]  (n2);
 %
 \def\myshift#1{\raisebox{1ex}}
-\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Lean MFG}}}] (n3) to [bend left=10]  (n4);
+\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\small\sffamily\myshift|Lean MFG}}}] (n3) to [bend left=10]  (n4);
 %
 \def\myshift#1{\raisebox{1ex}}
-\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Mass Customisation}}}] (n4) to [bend right=5]  (n5);
+\draw [->,thick,postaction={decorate,decoration={text along path,text align=center,text={|\tiny\sffamily\myshift|Mass Customisation}}}] (n4) to [bend right=5]  (n5);
 %
 \def\myshift#1{\raisebox{1ex}}
-\draw [->,dashed,thick,postaction={decorate,decoration={text along path,text align=center,text={|\sffamily\myshift|Personalised Production}}}] (n5) to [bend right=5]  (n6);
+\draw [->,dashed,thick,postaction={decorate,decoration={text along path,text align=center,text={|\small\sffamily\myshift|Personalised Production}}}] (n5) to [bend right=5]  (n6);
 
 
 \node[circle, draw,inner sep=2pt, scale=0.15] at (9.8,4) (IR1) {\includegraphics[width=6cm]{hammer.png}};

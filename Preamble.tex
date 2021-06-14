@@ -36,8 +36,21 @@
 
 
 \usepackage{subfiles} 
-\usepackage{natbib}
+\usepackage{natbib,hyperref}
+\usepackage{doi}
+\usepackage{geometry}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{url}
+
+
+\def\UrlBreaks{\do\/\do-}
+
 \newcommand{\SensorSubSec}[1]{ \vspace{0.5em} \noindent \textit{#1}}
+
+\newenvironment{rotatepage}%
+    {\clearpage\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}}%
+    {\clearpage\pagebreak[4]\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}}%
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
